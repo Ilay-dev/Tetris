@@ -1,5 +1,5 @@
 import { type CSSProperties, useState } from 'react';
-import { Keyboard, Play, Trophy, Volume2, VolumeX } from 'lucide-react';
+import { ArrowLeft, Keyboard, Play, Trophy, Volume2, VolumeX } from 'lucide-react';
 import type { GameConfig, VisualTheme } from '../engine/types.ts';
 
 interface HomeScreenProps {
@@ -40,10 +40,20 @@ export function HomeScreen({
   return (
     <div className="min-h-screen bg-black text-white flex flex-col justify-between px-4 py-8 sm:px-6">
       {/* Top Bar */}
-      <header className="max-w-xl w-full mx-auto flex items-center justify-between text-xs text-zinc-500">
-        <div className="inline-flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-white" />
-          <span>Singleplayer · Lokal</span>
+      <header className="max-w-xl w-full mx-auto flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-500">
+        <div className="flex flex-wrap items-center gap-3">
+          <a
+            href="https://gundigame.vercel.app"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-white/15 bg-white/[0.06] px-3 py-1.5 text-xs font-medium text-zinc-200 hover:bg-white hover:text-black hover:border-white transition-colors"
+          >
+            <ArrowLeft className="w-3.5 h-3.5" />
+            <span>Zurück zum Dashboard</span>
+          </a>
+
+          <div className="inline-flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-white" />
+            <span>Singleplayer · Lokal</span>
+          </div>
         </div>
 
         <div className="flex items-center gap-3">
@@ -235,3 +245,4 @@ export function HomeScreen({
     </div>
   );
 }
+
